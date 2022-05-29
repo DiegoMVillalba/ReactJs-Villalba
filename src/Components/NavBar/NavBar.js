@@ -6,6 +6,14 @@ import Nav from 'react-bootstrap/Nav'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
+import Carrito from '../../imagenes/Carrito.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faCartPlus} from '@fortawesome/free-solid-svg-icons'
+
+
+
+
+
 
 function NavBar() {
   return (
@@ -33,6 +41,15 @@ function NavBar() {
           <Nav.Link href="#" disabled>
             Politicas de privacidad
           </Nav.Link>
+          <Navbar bg="dark" variant="dark">
+    <Container>
+      <Navbar.Brand href="#home">
+      <FontAwesomeIcon icon={ faCartPlus} />{' '}
+      
+      </Navbar.Brand>
+      <img src={Carrito} style={{maxWidth:"20px"} }/>-------
+    </Container>
+  </Navbar>  
         </Nav>
         <Form className="d-flex">
           <FormControl

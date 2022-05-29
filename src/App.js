@@ -1,14 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import NavBar from './Components/NavBar/NavBar';
+import Header from './Components/Header/Header';
+import Body from './Components/Body/Body';
+
+
 
 
 function App() {
+    let Encabezado= "Kuma"
+
   return (
-        <NavBar/>
-    
-  );
+        <>
+        <Header header={Encabezado}/>
+        <NavBar />
+        <Body/>
+        
+        
+        </>
+          
+      
+    );
 }
 
 
