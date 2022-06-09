@@ -3,9 +3,9 @@ import { useState } from "react";
 import Card from 'react-bootstrap/Card';
 import Button from "react-bootstrap/esm/Button";
 
-export const Btn = () => {
-  const [count, setCount] = useState(1);
-  const [stock, setStock] = useState(10);
+export const Btn = ({initial, stock, onAdd}) => {
+  const [count, setCount] = useState(initial);
+  //const [stock, setStock] = useState(10);
 
   function agregar() {
     // setCount(count + 1);
@@ -15,8 +15,12 @@ export const Btn = () => {
     // setCount(count - 1);
     count <= 1 ? alert("No puede haber menos de 1") : setCount(count - 1);
   }
+  
+  function agregarCarrito(){
+    console.log(count)
+  }
 
-  console.log(count);
+  
 
   return (
     <Card style={{ width: "18rem" }}>
@@ -28,6 +32,7 @@ export const Btn = () => {
         </Card.Text>
         <Button  onClick={quitar} variant="danger">-</Button>  
         <Button onClick={agregar} variant="primary">+</Button>
+        <Button onClick={agregarCarrito} variant="primary">add</Button>
         
       </Card.Body>
     </Card>
