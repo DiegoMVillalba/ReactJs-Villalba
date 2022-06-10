@@ -28,7 +28,6 @@ function App() {
                         <NavBar />
                     <Routes>
                         <Route path='/'element={<ItemListContainer/>}/>
-
                     </Routes>  
 
                         <Body/>
