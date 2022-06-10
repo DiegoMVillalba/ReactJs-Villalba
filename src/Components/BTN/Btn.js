@@ -17,7 +17,7 @@ export const Btn = ({initial, stock, onAdd}) => {
   }
   
   function agregarCarrito(){
-    console.log(count)
+    onAdd(count)
   }
 
   
@@ -39,11 +39,4 @@ export const Btn = ({initial, stock, onAdd}) => {
   );
 };
 
-{
-  /* <div>
-<h1> {count}</h1>
-<p>El stock es {stock}</p>
-<button onClick={quitar}>-</button>
-<button onClick={agregar}>+</button>
-</div> */
-}
+

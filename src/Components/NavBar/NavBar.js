@@ -6,7 +6,7 @@ import Nav from 'react-bootstrap/Nav'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
-import Carrito from '../../imagenes/Carrito.png'
+import Carrito from '../imagenes/Carrito.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faCartPlus} from '@fortawesome/free-solid-svg-icons'
 
