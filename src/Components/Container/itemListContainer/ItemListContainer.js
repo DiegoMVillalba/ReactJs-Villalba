@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import {getFetch} from "../helper/arrayDatos";
-import ItemList from "../ItemList/ItemList";
+import {getFetch} from "../../helper/arrayDatos";
+import ItemList from "../../ItemList/ItemList";
 
 
 const ItemListContainer = () => {

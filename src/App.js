@@ -8,7 +8,9 @@ import Header from './Components/Header/Header';
 import Body from './Components/Body/Body';
 import { Btn } from './Components/BTN/Btn';
 import React from 'react';
-import ItemListContainer from './Components/itemListContainer/ItemListContainer';
+import ItemListContainer from './Components/Container/itemListContainer/ItemListContainer';
+import ItemDetailContainer from './Components/Container/ItemDetailContainer';
+
 
 
 
@@ -22,18 +24,17 @@ function App() {
     }
     
 
-  return (
-        <BrowserRouter>
+    return (
+    
+                    <>
                         <Header header={Encabezado}/>
                         <NavBar />
-                    <Routes>
-                        <Route path='/'element={<ItemListContainer/>}/>
-                    </Routes>  
-
+                        <Btn initial={1} stock={10} onAdd={onAdd}/>                                        
+                        <ItemListContainer/>                        
                         <Body/>
-                        <Btn initial={1} stock={10} onAdd={onAdd}/>
-                    </BrowserRouter>
-           
+                        <ItemDetailContainer/>                    
+                    </>
+                    
           
       
     );
