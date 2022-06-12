@@ -23,7 +23,7 @@ export const getFetch = () =>{
           
     })
 }  
-const producto = { id: '1' ,categoria: 'Top', name: "Top beige", price: "$1900", foto:topBeige}
+const producto = { id: '1' ,categoria: 'Top', name: "Top beige", stock:6, price: "$1900", foto:topBeige}
                 
                     
 

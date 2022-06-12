@@ -8,6 +8,7 @@ const ItemDetail = ({producto}) => {
           <h2>Nombre: {producto.name}</h2>
           <h3>Categoria: {producto.categoria}</h3>
           <h4>Precio: {producto.price}</h4>
+          <h5>Stock: {producto.stock}</h5>
       </div> 
   </div>
       
