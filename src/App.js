@@ -25,15 +25,16 @@ function App() {
     
 
     return (
+     <>
+     <Header header={Encabezado}/>
+<NavBar />
+<Btn initial={1} stock={10} onAdd={onAdd}/> 
+<ItemListContainer/>
+<ItemDetailContainer />
+<Body/>
+     </>
     
-                    <>
-                        <Header header={Encabezado}/>
-                        <NavBar />
-                        <Btn initial={1} stock={10} onAdd={onAdd}/>                                        
-                        <ItemListContainer/>                        
-                        <Body/>
-                        <ItemDetailContainer/>                    
-                    </>
+                   
                     
           
       
@@ -42,3 +43,13 @@ function App() {
 
 
 export default App;
+/* <BrowserRouter>
+<Header header={Encabezado}/>
+<NavBar />
+<Btn initial={1} stock={10} onAdd={onAdd}/>                                        
+<Routes>
+<Route path="/" element={<ItemListContainer/>}  />                     
+<Route path="/ItemDetail" element={<ItemDetailContainer />}/> 
+</Routes>                   
+<Body/>  
+</BrowserRouter> */

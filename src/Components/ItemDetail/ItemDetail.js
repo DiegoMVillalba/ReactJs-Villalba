@@ -1,4 +1,5 @@
-const ItemDetail = ({producto}) => {
+const ItemDetail = (producto) => {
+ 
     return (
       <div className="row" style={{border:"solid", color:"black"}}>
       <div className="col-md-6">
