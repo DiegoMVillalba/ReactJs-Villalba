@@ -5,7 +5,7 @@ import calzaGris from '../imagenes/mujer/calzaGris.jpg'
 import batik from '../imagenes/mujer/batik.jpg'
 
 const productos =[ 
-                    { id: 1 ,categoria: 'Top', name: "Top beige", price: "$1900", foto:topBeige},
+                    { id: '1' ,categoria: 'Top', name: "Top beige", price: "$1900", foto:topBeige},
                     { id: '2' ,categoria: 'Calza', name: "Calza beige", price: "$1900", foto:calzaBeige},
                     { id: '3' ,categoria: 'Top', name: "Top gris", price: "$2700", foto:topGris},
                     { id: '4' ,categoria: 'Calza', name: "Calza gris", price: "$3800", foto:calzaGris},
