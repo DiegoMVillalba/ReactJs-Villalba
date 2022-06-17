@@ -5,7 +5,7 @@ import{BrowserRouter, Routes, Route, Navigate}from 'react-router-dom';
 
 import NavBar from './Components/NavBar/NavBar';
 import Header from './Components/Header/Header';
-import Body from './Components/Body/Body';
+// import Body from './Components/Body/Body';
 import React from 'react';
 import ItemListContainer from './Components/Container/itemListContainer/ItemListContainer';
 import ItemDetailContainer from './Components/Container/ItemDetailContainer';
@@ -38,7 +38,7 @@ function App() {
 
                {/* <Route path='*' element={<Navigate To='/'/>}/> */}
                </Routes>                   
-               <Body/>  
+               {/* <Body/>   */}
      </BrowserRouter> 
     
                    
