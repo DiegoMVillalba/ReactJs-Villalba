@@ -6,9 +6,11 @@ import Nav from 'react-bootstrap/Nav'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
-import Carrito from '../imagenes/Carrito.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faCartPlus} from '@fortawesome/free-solid-svg-icons'
+import { Link, NavLink } from 'react-router-dom'
+
+
 
 
 
@@ -19,7 +21,7 @@ function NavBar() {
   return (
     <Navbar bg="dark"  variant="dark" expand="lg">
     <Container fluid>
-      <Navbar.Brand L>Home</Navbar.Brand>
+      <NavLink to="/"><Navbar.Brand L>Home</Navbar.Brand></NavLink>
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
         <Nav
@@ -28,8 +30,12 @@ function NavBar() {
           navbarScroll
         >
             <NavDropdown title="Productos" id="navbarScrollingDropdown">
-            <NavDropdown.Item href="#action3">Hombre</NavDropdown.Item>
-            <NavDropdown.Item href="#action4">Mujer</NavDropdown.Item>
+            <ul>
+              <li><NavLink to="/categoria/Top">Top</NavLink></li>
+              <li><NavLink to="/categoria/Calza">Calza</NavLink></li>
+              <li><NavLink to="/categoria/Batik">Batik</NavLink></li>
+            </ul>
+            
             <NavDropdown.Divider />
             <NavDropdown.Item href="#action5">
              #
@@ -44,10 +50,10 @@ function NavBar() {
           <Navbar bg="dark" variant="dark">
     <Container>
       <Navbar.Brand href="#home">
-      <FontAwesomeIcon icon={ faCartPlus} />{' '}
+            
       
       </Navbar.Brand>
-      <img src={Carrito} style={{maxWidth:"20px"} }/>-------
+      
     </Container>
   </Navbar>  
         </Nav>
@@ -60,6 +66,11 @@ function NavBar() {
           />
           <Button variant="outline-success">Search</Button>
         </Form>
+        <Link to='/cart'>
+          <button>
+            <FontAwesomeIcon icon={ faCartPlus} />
+          </button>
+        </Link>
       </Navbar.Collapse>
     </Container>
   </Navbar>

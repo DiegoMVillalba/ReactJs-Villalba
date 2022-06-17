@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Item =({prod}) => {
     return(
@@ -12,13 +13,15 @@ const Item =({prod}) => {
                              {`${prod.name} - ${prod.categoria}`}
                          </div>
                          <div className="card-body">
-                             <img src={prod.foto} alt='' className='w-50' />
-                             {prod.stock}                                                            
+                             <img src={prod.foto} alt='' className='w-50'  />
+                             {/* {prod.stock}                                                             */}
                          </div>
                          <div className="card-footer">  
-                             <button className="btn btn-outline-primary btn-block">
-                                 detalle del producto
-                             </button>                
+                             <Link to={`/detalle/${prod.id}`}>
+                                 <button className="btn btn-outline-primary btn-block">
+                                     detalle del producto
+                                 </button> 
+                             </Link>               
                          </div>
                      </div>                                                                                
                  </div>
