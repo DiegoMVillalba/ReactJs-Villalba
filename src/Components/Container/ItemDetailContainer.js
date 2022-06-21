@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
      
     const {id} = useParams()
     
-    console.log(id)
+    
     
         useEffect ( () =>{    
             getFetch(id)

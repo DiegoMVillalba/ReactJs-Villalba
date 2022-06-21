@@ -23,8 +23,8 @@ export const getFetch = (id) =>{
             }else {
                 resolve(productos) 
              } 
-        },2000)    
-        // console.log('ID: ', typeof id)
+        },1000)    
+        console.log('ID: ', typeof id)
     })
     
 }  

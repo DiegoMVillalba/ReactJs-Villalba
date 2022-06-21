@@ -1,15 +1,16 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Btn } from "../BTN/Btn"
-
+import {CartContextProvider} from '../CartContext/CartContext'
 
 const ItemDetail = ({producto}) => {
     const [ estado, setEstado] = useState()
+    const {addToCart} = useContext(CartContextProvider);
 
-
-    function onAdd(cant){
-        console.log(cant)
-        setEstado(cant)
+    function onAdd(item, cant){
+        addToCart(item, cant)
+        // console.log(cant)
+        // setEstado(cant)
     }
     
     return (
