@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-// import { getFetchDetail } from "../helper/arrayDatos"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { getFetch } from "../helper/arrayDatos"
 import { useParams } from "react-router-dom"

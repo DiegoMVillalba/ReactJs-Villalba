@@ -24,7 +24,7 @@ export const getFetch = (id) =>{
                 resolve(productos) 
              } 
         },1000)    
-        console.log('ID: ', typeof id)
+        // console.log('ID: ', typeof id)
     })
     
 }  

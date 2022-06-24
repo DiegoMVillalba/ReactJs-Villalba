@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import Card from 'react-bootstrap/Card';
 import Button from "react-bootstrap/esm/Button";
+import {CartContextProvider} from '../CartContext/CartContext'
 
 export const Btn = ({initial, stock, onAdd}) => {
   const [count, setCount] = useState(initial);
+  const {addToCart} =  useContext(CartContextProvider)
   //const [stock, setStock] = useState(10);
 
   function agregar() {
@@ -18,6 +20,7 @@ export const Btn = ({initial, stock, onAdd}) => {
   
   function agregarCarrito(){
     onAdd(count)
+    
   }
 
   

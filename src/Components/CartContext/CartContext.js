@@ -25,7 +25,7 @@ const CartContext = ({children}) => {
   }
 
   const isInCart = (id) => {
-    return cartList && cartList.some((prod) => prod.item.id === id)
+    return cartList && cartList.some((prod) => prod.item.id === id) 
   }
 
   const emptyCart = () => {
