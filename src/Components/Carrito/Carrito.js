@@ -1,5 +1,6 @@
 import { useContext } from "react";
-// import { Link } from "react-router-dom";
+import Button from "react-bootstrap/esm/Button";
+import { Link } from "react-router-dom";
 import { CartContextProvider } from "../CartContext/CartContext";
 import CartItem from "./CartItem";
 
@@ -10,7 +11,16 @@ const Carrito = () => {
   return (
     <>
       {cartList.length === 0 ? (
-        <p>Carrito Vacio</p>
+       <>
+          <p>Carrito Vacio</p>
+          <div className="d-grid">
+            <Link to='/'>
+              <Button variant="outline-primary">
+                Seguir Comprando
+              </Button>
+            </Link>
+          </div>
+       </>
       ) : (
         <>
           {cartList.map((product) => (

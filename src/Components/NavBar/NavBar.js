@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import NavDropdown from "react-bootstrap/NavDropdown";
@@ -6,11 +6,16 @@ import Nav from "react-bootstrap/Nav";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
+import Badge from 'react-bootstrap/Badge'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { Link, NavLink } from "react-router-dom";
+import {CartContextProvider} from '../CartContext/CartContext'
 
 function NavBar() {
+
+    const {iconCart, cartList}= useContext(CartContextProvider)
+
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container fluid>
@@ -63,7 +68,7 @@ function NavBar() {
           </Form>
           <Link to="/cart">
             <button className="btn btn-outline-white">
-              <FontAwesomeIcon  icon={faCartShopping} color="white" />
+              <Badge bg="primary-outline">{cartList.length === 0 ? 0 : iconCart()}</Badge> <FontAwesomeIcon  icon={faCartShopping} color="white" />
             </button>
           </Link>
         </Navbar.Collapse>

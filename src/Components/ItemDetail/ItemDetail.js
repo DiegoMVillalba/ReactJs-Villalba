@@ -7,11 +7,10 @@ const ItemDetail = ({ producto }) => {
   const [estado, setEstado] = useState();
   const { addToCart } = useContext(CartContextProvider);
 
-  function onAdd(cant) {
-    addToCart(producto, cant);
-    console.log(cant, producto);
-    setEstado(cant, producto);
-    
+  function onAdd(cantidad) {
+    addToCart({ ...producto, cantidad });
+    console.log(cantidad, producto);
+    setEstado(cantidad, producto);
   }
 
   return (
