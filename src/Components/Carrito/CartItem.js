@@ -3,13 +3,13 @@ import {CartContextProvider} from '../CartContext/CartContext'
 
 
 const CartItem = ({product}) => {
-    const {deleteItem, cartList, addToCart,setCartList,isInCart} = useContext(CartContextProvider)
-    const {name,price ,foto, id,item} = product
+    const {deleteItem} = useContext(CartContextProvider)
+    const {id} = product
 
   return (
     <div className="row" style={{ border: "solid", color: "black" }}>
     <div className="col-md-6">
-      <img src={product.foto} className="w-100 h-200 " />
+      <img src={product.foto} className="w-100 h-200 " alt='foto' />
     </div>
     <div className="col-md-6">
       <h2>Nombre: {product.name}</h2>
@@ -30,11 +30,3 @@ export default CartItem
 
 
 
-{/* <div>
-<h4>{product.name}</h4>
-<img src={product.foto}/>
-<h4>{product.price}</h4>
-<h4>Cantidad: {product.cantidad}</h4>
-
-
-</div> */}

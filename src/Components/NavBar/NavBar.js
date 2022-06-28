@@ -15,7 +15,7 @@ import {CartContextProvider} from '../CartContext/CartContext'
 function NavBar() {
 
     const {iconCart, cartList}= useContext(CartContextProvider)
-
+  
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container fluid>

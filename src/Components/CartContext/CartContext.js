@@ -11,20 +11,22 @@ const CartContext = ({children}) => {
   
   const addToCart = (item) => {
       if(isInCart(item.id)){
-        
         alert("El producto ya se encuentra en el carrito")
-     
+        
+        
       }
       else{
-        setCartList([...cartList,{item}])
+        setCartList([...cartList, item])
         alert("Agregaste el producto")
       }
-      console.log(item)
+     
   }
 
   const iconCart = () =>{
-    return cartList.reduce((acum, i) => acum + i.cantidad, 0)
+    return cartList.reduce((acum, prod) => acum + prod.cantidad, 0)
   }
+
+ 
 
   const totalPrice = () => {
     cartList.reduce((acum, prod) => acum + prod.cantidad * prod.item.price, 0)
@@ -43,7 +45,7 @@ const CartContext = ({children}) => {
     setCartList(items)
   }
 
-  // const iconCart = () => cartList.reduce((acum, valor) => acum + valor.quantity, 0);
+  
 
   return (
     <CartContextProvider.Provider value={{cartList, addToCart, emptyCart, deleteItem, totalPrice, iconCart}}>

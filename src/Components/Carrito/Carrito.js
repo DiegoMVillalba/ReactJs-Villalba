@@ -7,8 +7,10 @@ import CartItem from "./CartItem";
 const Carrito = () => {
   const { cartList, emptyCart, totalPrice } = useContext(CartContextProvider);
 
+  console.log('cartlist',cartList)
 
   return (
+
     <>
       {cartList.length === 0 ? (
        <>
@@ -24,10 +26,10 @@ const Carrito = () => {
       ) : (
         <>
           {cartList.map((product) => (
-            <CartItem key={product.item.id} product={product.item} />
+            <CartItem key={product.item.id} product={product.item.id} />
           ))}
           <button onClick={emptyCart}>Borrar carrito</button>
-          <p>El precio total de los productos es {totalPrice}</p>
+          <p>El precio total de los productos es {totalPrice()}</p>
         </>
       )}
     </>

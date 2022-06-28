@@ -24,11 +24,11 @@ export const getFetch = (id) =>{
                 resolve(productos) 
              } 
         },1000)    
-        // console.log('ID: ', typeof id)
     })
     
 }  
 // const producto = { id: '1' ,categoria: 'Top', name: "Top beige", stock:6, price: "$1900", foto:topBeige}
+// console.log('ID: ', typeof id)
                 
                     
 
