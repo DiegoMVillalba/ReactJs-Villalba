@@ -28,12 +28,24 @@ const CartContext = ({children}) => {
 
  
 
+  // const totalPrice = () => {
+  //   cartList.reduce((acum, prod) => acum + prod.cantidad * prod.price, 0)
+  // }
   const totalPrice = () => {
-    cartList.reduce((acum, prod) => acum + prod.cantidad * prod.item.price, 0)
-  }
+    let total = 0;
+
+    cartList.forEach((prod) => {
+      total +=
+        parseInt(prod.price) * parseInt(prod.cantidad);
+    });
+
+    return parseInt(total);
+  };
+
+
 
   const isInCart = (id) => {
-    return cartList && cartList.some((prod) => prod.item.id === id) 
+    return cartList && cartList.some((prod) => prod.id === id) 
   }
 
   const emptyCart = () => {
@@ -41,7 +53,7 @@ const CartContext = ({children}) => {
   }
 
   const deleteItem = (id) => {
-    const items = cartList.filter((prod) => prod.item.id !== id)
+    const items = cartList.filter((prod) => prod.id !== id)
     setCartList(items)
   }
 

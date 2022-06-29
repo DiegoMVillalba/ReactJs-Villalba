@@ -21,6 +21,7 @@ export const Btn = ({initial, stock, onAdd}) => {
   function agregarCarrito(){
     onAdd(count)
     
+    
   }
 
   
