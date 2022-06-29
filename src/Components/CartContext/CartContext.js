@@ -9,22 +9,37 @@ const CartContext = ({children}) => {
   
   
   
-  const addToCart = (item) => {
-      if(isInCart(item.id)){
-        alert("El producto ya se encuentra en el carrito")
+  // const addToCart = (prod) => {
+  //     if(isInCart(prod.id)){
+  //       alert("El producto ya se encuentra en el carrito")
         
         
-      }
-      else{
-        setCartList([...cartList, item])
-        alert("Agregaste el producto")
-      }
+  //     }
+  //     else{
+  //       setCartList([...cartList, prod])
+  //       alert("Agregaste el producto")
+  //     }
      
-  }
+  // }
 
   const iconCart = () =>{
     return cartList.reduce((acum, prod) => acum + prod.cantidad, 0)
   }
+
+  
+  const addToCart = (prod) => {
+    
+    let carritoprevio = [...cartList];
+    
+    if (carritoprevio.some((item) => item.id === prod.id)) 
+    {
+      carritoprevio.find((item) => item.id === prod.id).cantidad += prod.cantidad;
+      setCartList(carritoprevio);
+    } else {
+      setCartList([...cartList, prod]);
+    }
+   
+  };
 
  
 
