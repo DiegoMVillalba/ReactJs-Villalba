@@ -31,6 +31,9 @@ const Carrito = () => {
           ))}
           <button onClick={emptyCart}>Borrar carrito</button>
           <p>El precio total de los productos es : $ { totalPrice()}</p>
+          <Button variant="dark" onClick={() => console.log("Dark")}>
+            Terminar compra
+          </Button>
         </>
       )}
     </>

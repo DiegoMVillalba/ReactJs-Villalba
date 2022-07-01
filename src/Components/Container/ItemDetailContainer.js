@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
         .then(resp => setProducto({id: resp.id, ...resp.data()}))
         .catch(err => console.log(err))
 
-    }, [])
+    }, [id])
    
     
         // Con GetFecth
