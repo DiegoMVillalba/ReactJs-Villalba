@@ -6,21 +6,6 @@ const CartContext = ({children}) => {
 
   const [cartList, setCartList] = useState([])
 
-  
-  
-  
-  // const addToCart = (prod) => {
-  //     if(isInCart(prod.id)){
-  //       alert("El producto ya se encuentra en el carrito")
-        
-        
-  //     }
-  //     else{
-  //       setCartList([...cartList, prod])
-  //       alert("Agregaste el producto")
-  //     }
-     
-  // }
 
   const iconCart = () =>{
     return cartList.reduce((acum, prod) => acum + prod.cantidad, 0)
