@@ -22,7 +22,7 @@ const Carrito = () => {
         const id = cartItem.id
         const nombre = cartItem.name
         const precio = cartItem.price * cartItem.cantidad
-        // const cantidad = cartItem.cantidad
+    
         
         return {id, nombre, precio}   
     })
