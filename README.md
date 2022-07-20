@@ -11,7 +11,7 @@ Este es un proyecto educativo realizado durante el curso de ReactJS con el fin d
 
 ## 🚀 Author
 
-- [@Diego Martin Villalba](https://github.com/DiegoMVillalba/ReactJs-Villalba)
+- [@Diego Martin Villalba](https://resonant-dusk-75f157.netlify.app/)-Link a Netlify
 
 ## Instalación
 
