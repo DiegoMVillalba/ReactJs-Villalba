@@ -1,24 +1,24 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useState } from "react";
 import Card from 'react-bootstrap/Card';
 import Button from "react-bootstrap/esm/Button";
-import {CartContextProvider} from '../CartContext/CartContext'
+
 
 export const Btn = ({initial, stock, onAdd}) => {
   const [count, setCount] = useState(initial);
-  const {addToCart} =  useContext(CartContextProvider)
-  //const [stock, setStock] = useState(10);
+  
+  
 
-  function agregar() {
-    // setCount(count + 1);
+  function add() {
+    
     count >= stock ? alert("Tope de stock") : setCount(count + 1);
   }
-  function quitar() {
-    // setCount(count - 1);
+  function remove() {
+    
     count <= 1 ? alert("No puede haber menos de 1") : setCount(count - 1);
   }
   
-  function agregarCarrito(){
+  function addToCart(){
     onAdd(count)
     
     
@@ -28,15 +28,14 @@ export const Btn = ({initial, stock, onAdd}) => {
 
   return (
     <Card style={{ width: "18rem" }}>
-      {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
       <Card.Body>
         <Card.Title><h1> {count}</h1></Card.Title>
         <Card.Text>
         <p>El stock es {stock}</p>
         </Card.Text>
-        <Button  onClick={quitar} variant="danger">-</Button>  
-        <Button onClick={agregar} variant="primary">+</Button>
-        <Button onClick={agregarCarrito} variant="primary">add</Button>
+        <Button  onClick={remove} variant="dark">-</Button>  <n/>
+        <Button onClick={addToCart} variant="dark">Agregar al carrito</Button> <n/>
+        <Button onClick={add} variant="dark">+</Button> 
         
       </Card.Body>
     </Card>

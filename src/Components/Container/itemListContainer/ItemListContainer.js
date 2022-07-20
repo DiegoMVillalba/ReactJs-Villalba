@@ -5,22 +5,22 @@ import {collection, getDocs ,getFirestore, query, where} from 'firebase/firestor
 
 
 const ItemListContainer = () => {
-  const [productos, setProductos] = useState([]);
+  const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const { categoriaId } = useParams();
+  const { categoryId } = useParams();
   
 
   useEffect(() =>{
     const db = getFirestore()
     const  queryCollection = collection(db, 'items' )
   
-      const queryCollectionFilter = categoriaId ? query(queryCollection, where('categoria','==', categoriaId )) : queryCollection
+      const queryCollectionFilter = categoryId ? query(queryCollection, where('categoria','==', categoryId )) : queryCollection
             getDocs(queryCollectionFilter)
-            .then(resp => setProductos(resp.docs.map(item =>({ id:item.id, ...item.data()}))))
+            .then(resp => setProduct(resp.docs.map(item =>({ id:item.id, ...item.data()}))))
             .catch((err) => console.log(err))
             .finally(() => setLoading(false));
-      }, [categoriaId])
+      }, [categoryId])
   
 
   return (
@@ -31,7 +31,7 @@ const ItemListContainer = () => {
         <div
           style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}
         >
-          <ItemList productos={productos} />
+          <ItemList product={product} />
         </div>
       )}
     </div>

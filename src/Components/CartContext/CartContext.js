@@ -8,18 +8,18 @@ const CartContext = ({children}) => {
 
 
   const iconCart = () =>{
-    return cartList.reduce((acum, prod) => acum + prod.cantidad, 0)
+    return cartList.reduce((acum, prod) => acum + prod.quantity, 0)
   }
 
   
   const addToCart = (prod) => {
     
-    let carritoprevio = [...cartList];
+    let previousCart = [...cartList];
     
-    if (carritoprevio.some((item) => item.id === prod.id)) 
+    if (previousCart.some((item) => item.id === prod.id)) 
     {
-      carritoprevio.find((item) => item.id === prod.id).cantidad += prod.cantidad;
-      setCartList(carritoprevio);
+      previousCart.find((item) => item.id === prod.id).cantidad += prod.cantidad;
+      setCartList(previousCart);
     } else {
       setCartList([...cartList, prod]);
     }
@@ -28,15 +28,12 @@ const CartContext = ({children}) => {
 
  
 
-  // const totalPrice = () => {
-  //   cartList.reduce((acum, prod) => acum + prod.cantidad * prod.price, 0)
-  // }
   const totalPrice = () => {
     let total = 0;
 
     cartList.forEach((prod) => {
       total +=
-        parseInt(prod.price) * parseInt(prod.cantidad);
+        parseInt(prod.price) * parseInt(prod.quantity);
     });
 
     return parseInt(total);
@@ -44,9 +41,7 @@ const CartContext = ({children}) => {
 
 
 
-  const isInCart = (id) => {
-    return cartList && cartList.some((prod) => prod.id === id) 
-  }
+ 
 
   const emptyCart = () => {
     setCartList([])

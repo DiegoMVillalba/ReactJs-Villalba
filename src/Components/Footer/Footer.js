@@ -1,4 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
 
 const Footer = () => {
   return (
@@ -15,6 +16,7 @@ const Footer = () => {
             <ul className="sci">
               <li>
                 <a href="https://www.instagram.com/kuma.fitwear/">
+                
                 
                 </a>
               </li>

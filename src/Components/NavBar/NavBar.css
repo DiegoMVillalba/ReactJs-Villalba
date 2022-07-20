@@ -35,6 +35,8 @@
       color: #ffffff; }
     .navbar .navbar ul li {
       color: #ffffff; }
+
+     
   
   .envios {
     width: 100%; }
@@ -204,6 +206,8 @@
     padding: 8px 100px;
     text-align: center;
     color: #999; }
+
+   
   
   /* mobile first */
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
