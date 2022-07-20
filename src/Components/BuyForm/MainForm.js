@@ -40,7 +40,9 @@ const MainForm = () => {
           telephone: telephone
     
         };
-        order.total = totalPrice()
+        order.total = totalPrice();
+
+        order.date = new Date().toLocaleString("es-AR");
     
         order.items = cartList.map(cartItem => {
             const id = cartItem.id
