@@ -110,6 +110,7 @@ const MainForm = () => {
                     name="email"
                     legndError="El email solo puede contener letras, numeros, puntos, guiones y guion bajo."
                     regularExpression={expressions.email}
+                    required
   
                 />
                   <InputComponent
@@ -121,6 +122,7 @@ const MainForm = () => {
                     name="telephone"
                     legndError="El telephone solo puede contener numeros y el maximo son 14 dígitos."
                     regularExpression={expressions.telephone}
+                    required
   
                 />
                 <p>el precio total es : {totalPrice()}</p>
@@ -128,7 +130,7 @@ const MainForm = () => {
             
                     <TermsContainer>
                       <Label>
-                        <input type="checkbox" name="terms" id="terms" checked={terms} onChange={onChangeTerms} />
+                        <input type="checkbox" name="terms" id="terms" checked={terms} onChange={onChangeTerms} required />
                         Acepto los Terminos y Condiciones
                       </Label>
                     </TermsContainer>
