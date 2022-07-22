@@ -9,7 +9,7 @@ import Header from './Components/Header/Header';
 import React from 'react';
 import ItemListContainer from './Components/Container/itemListContainer/ItemListContainer';
 import ItemDetailContainer from './Components/Container/ItemDetailContainer';
-import Carrito from './Components/Cart/Cart';
+import Cart from './Components/Cart/Cart';
 import Footer from './Components/Footer/Footer';
 import CartContext from './Components/CartContext/CartContext';
 import MainForm from './Components/BuyForm/MainForm';
@@ -35,15 +35,11 @@ function App() {
                    <Routes>
                    <Route path="/" element={<ItemListContainer/>}  />  
                    <Route path="/categoria/:categoryId" element={<ItemListContainer/>}  />  
-    
                    <Route path="/detalle/:id" element={<ItemDetailContainer />}/> 
-                   <Route path="/cart" element={<Carrito/>}  /> 
+                   <Route path="/cart" element={<Cart/>}  /> 
                    <Route path='/mainForm' element={<MainForm/>}/>
                    <Route path='/WhoWeAre' element={<WhoWeAre/>}/>
-                   
-                   {/* <Route path='*' element={<Navigate To='/'/>}/> */}
                    </Routes>                   
-                   {/* <Body/>   */}
                    <Footer/>
          </BrowserRouter>
      </CartContext> 

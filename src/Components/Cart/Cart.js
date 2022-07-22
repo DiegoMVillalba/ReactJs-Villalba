@@ -1,7 +1,6 @@
-import { addDoc, collection, getFirestore } from "firebase/firestore";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import {Button, CenteredButtonContainer} from "../BuyForm/Elements/StyledForm";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { CartContextProvider } from "../CartContext/CartContext";
 import CartItem from "./CartItem";
 
