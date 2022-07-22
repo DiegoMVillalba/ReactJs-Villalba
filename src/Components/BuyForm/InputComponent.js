@@ -3,7 +3,7 @@ import { GroupInput, IconValidation, LegendError, Label, Input } from '../BuyFor
 import {faCheckCircle,faTimesCircle,} from "@fortawesome/free-solid-svg-icons";
 
 
-const InputComponent = ({state, changeState, type, label, placeholder, name, legndError, regularExpression, password2 }) => {
+const InputComponent = ({state, changeState, type, label, placeholder, name, legndError, regularExpression, password2, required }) => {
     const onChange = (e) =>{
         changeState({...state, field:e.target.value});
     };
@@ -37,6 +37,7 @@ const InputComponent = ({state, changeState, type, label, placeholder, name, leg
             onKeyUp={validation}
             onBlur={validation}
             valid={state.valid}
+            required
         />
         <IconValidation
             icon={state.valido === 'true' ? faCheckCircle : faTimesCircle}

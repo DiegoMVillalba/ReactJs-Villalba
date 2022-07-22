@@ -31,14 +31,13 @@ const MainForm = () => {
 
 
     async function generateOrder(e) {
-        e.preventDefault()
+        e.preventDefault();
         let order= {}     
         
         order.buyer = {
           name: name,
           email: email,
           telephone: telephone
-    
         };
         order.total = totalPrice();
 
@@ -61,6 +60,9 @@ const MainForm = () => {
         .then( emptyCart())
         .catch(err => console.log(err))
 
+
+      
+
         if(
               name.valid === 'true' &&
               email.valid === 'true' &&
@@ -71,11 +73,13 @@ const MainForm = () => {
                 changeName({field: '', valid: null});
                 changeEmail({field: '', valid: null});
                 changeTelephone({field: '', valid: null});
+               
               }else{
                 changeFormValidation(false);
               }
        
       }
+       
 
 
 
@@ -92,6 +96,7 @@ const MainForm = () => {
                     name="name"
                     legndError="El Nombre tiene que ser de 4 a 16 Caracteres y no puede contener numeros y guion bajo."
                     regularExpression={expressions.name}
+                    required
   
                 />
   

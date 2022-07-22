@@ -6,8 +6,9 @@ import CartItem from "./CartItem";
 
 const Cart = () => {
   const { cartList, emptyCart, totalPrice } = useContext(CartContextProvider);
+
   
-  
+
   return (
     <>
       {cartList.length === 0 ? (
