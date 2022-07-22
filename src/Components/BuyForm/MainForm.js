@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faExclamationTriangle} from '@fortawesome/free-solid-svg-icons';
 import InputComponent from "./InputComponent";
 import {CartContextProvider} from '../CartContext/CartContext'
+import { useNavigate } from "react-router-dom";
 
 
 const MainForm = () => {
@@ -15,6 +16,8 @@ const MainForm = () => {
     const [formValidation, changeFormValidation] = useState(null);
     const [id, setId] = useState([])
     const {cartList, totalPrice, emptyCart} = useContext(CartContextProvider);
+
+    let navigate = useNavigate();
 
 
     const expressions = {
@@ -60,9 +63,6 @@ const MainForm = () => {
         .then( emptyCart())
         .catch(err => console.log(err))
 
-
-      
-
         if(
               name.valid === 'true' &&
               email.valid === 'true' &&
@@ -77,6 +77,11 @@ const MainForm = () => {
               }else{
                 changeFormValidation(false);
               }
+
+              setTimeout(() => {
+                navigate(`/`)
+                       
+              }, 5000);
        
       }
        
