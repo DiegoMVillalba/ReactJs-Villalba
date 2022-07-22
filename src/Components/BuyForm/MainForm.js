@@ -81,7 +81,7 @@ const MainForm = () => {
               setTimeout(() => {
                 navigate(`/`)
                        
-              }, 5000);
+              }, 3000);
        
       }
        
