@@ -11,7 +11,7 @@ Este es un proyecto educativo realizado durante el curso de ReactJS con el fin d
 
 ## 🚀 Author
 
-- [@Diego Martin Villalba](https://shiny-kitsune-9f8753.netlify.app/)-Link a Netlify
+- [@Diego Martin Villalba](https://elegant-kataifi-3be790.netlify.app/mainForm)-Link a Netlify
 
 ## Instalación
 
