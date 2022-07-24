@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faExclamationTriangle} from '@fortawesome/free-solid-svg-icons';
 import InputComponent from "./InputComponent";
 import {CartContextProvider} from '../CartContext/CartContext'
-import { useNavigate } from "react-router-dom";
+
 
 
 const MainForm = () => {
@@ -16,8 +16,7 @@ const MainForm = () => {
     const [formValidation, changeFormValidation] = useState(null);
     const [id, setId] = useState([])
     const {cartList, totalPrice, emptyCart} = useContext(CartContextProvider);
-
-    let navigate = useNavigate();
+  
 
 
     const expressions = {
@@ -26,7 +25,6 @@ const MainForm = () => {
       telephone: /^\d{7,14}$/ // 
     }
 
-  
 
     const onChangeTerms = (e) =>{
       changeTerms(e.target.checked);
@@ -63,35 +61,36 @@ const MainForm = () => {
         .then( emptyCart())
         .catch(err => console.log(err))
 
-        if(
-              name.valid === 'true' &&
-              email.valid === 'true' &&
-              telephone.valid === 'true' &&
-              terms
-              ){
-                changeFormValidation(true);
-                changeName({field: '', valid: null});
-                changeEmail({field: '', valid: null});
-                changeTelephone({field: '', valid: null});
-               
-              }else{
-                changeFormValidation(false);
-              }
-
-              setTimeout(() => {
-                navigate(`/`)
-                       
-              }, 3000);
+        
+         
        
       }
-       
+
+      const onSubmit = (e) =>{
+        e.preventDefault()
+        if(
+          name.valid === 'true' &&
+          email.valid === 'true' &&
+          telephone.valid === 'true' &&
+          terms
+          ){
+            generateOrder(e)
+            changeFormValidation(true);
+            changeName({field: '', valid: null});
+            changeEmail({field: '', valid: null});
+            changeTelephone({field: '', valid: null});
+           
+          }else{
+            changeFormValidation(false);
+          }
+
+      }
 
 
-
-
+      
     return (
         <main>
-                <Form onSubmit={generateOrder}>
+                <Form onSubmit={onSubmit}>
                   <InputComponent
                     state={name}
                     changeState={changeName}
@@ -101,7 +100,7 @@ const MainForm = () => {
                     name="name"
                     legndError="El Nombre tiene que ser de 4 a 16 Caracteres y no puede contener numeros y guion bajo."
                     regularExpression={expressions.name}
-                    required
+                    // required
   
                 />
   
@@ -115,7 +114,7 @@ const MainForm = () => {
                     name="email"
                     legndError="El email solo puede contener letras, numeros, puntos, guiones y guion bajo."
                     regularExpression={expressions.email}
-                    required
+                    // required
   
                 />
                   <InputComponent
@@ -127,7 +126,7 @@ const MainForm = () => {
                     name="telephone"
                     legndError="El telephone solo puede contener numeros y el maximo son 14 dígitos."
                     regularExpression={expressions.telephone}
-                    required
+                    // required
   
                 />
                 <p>el precio total es : {totalPrice()}</p>
@@ -135,7 +134,12 @@ const MainForm = () => {
             
                     <TermsContainer>
                       <Label>
-                        <input type="checkbox" name="terms" id="terms" checked={terms} onChange={onChangeTerms} required />
+                        <input type="checkbox" 
+                        name="terms" 
+                        id="terms" 
+                        checked={terms} onChange={onChangeTerms}
+                        //  required 
+                         />
                         Acepto los Terminos y Condiciones
                       </Label>
                     </TermsContainer>
