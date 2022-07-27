@@ -15,15 +15,15 @@ const Footer = () => {
             </p>
             <ul className="sci">
               <li>
-                <a href="https://www.instagram.com/kuma.fitwear/">
                 
                 
-                </a>
+                
+                
               </li>
               <li>
-                <a href="https://www.facebook.com/Kuma.Fitwear/">
+                
                   <i className="fa-brands fa-facebook-f"></i>
-                </a>
+                
               </li>
             </ul>
           </div>
@@ -31,21 +31,21 @@ const Footer = () => {
             <h2>ACCESOS RAPIDOS</h2>
             <ul>
               <li>
-                <a href="./index.html">Home</a>
+                Home
               </li>
               <li>
-                <a href="./pagina/hombre.html">Hombre</a>
+                Hombre
               </li>
               <li>
-                <a href="./pagina/mujer.html">Mujer</a>
+                Mujer
               </li>
               <li>
-                <a href="./pagina/quienes-somos.html">Nosotros</a>
+                Nosotros
               </li>
               <li>
-                <a href="./pagina/Politicas-devolucion.html">
+               
                   Politicas de devolucion
-                </a>
+                
               </li>
             </ul>
           </div>
@@ -63,8 +63,8 @@ const Footer = () => {
                   <i className="fa-solid fa-phone"></i>
                 </span>
                 <p>
-                  <a href="tel:5491151791994">+5491151791994</a>
-                  <a href="tel:5491151791994">+5491154846574</a>
+                  +5491151791994
+                  +5491154846574
                 </p>
               </li>
               <li>
@@ -72,9 +72,9 @@ const Footer = () => {
                   <i className="fa-solid fa-envelope"></i>
                 </span>
                 <p>
-                  <a href="mailto:kuma.fitwear@gmail.com">
+                  
                     kuma.fitwear@gmail.com
-                  </a>
+                  
                 </p>
               </li>
             </ul>
